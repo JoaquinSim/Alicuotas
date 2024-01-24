@@ -1,3 +1,4 @@
+import { CatalogueEntity } from '@core/entities';
 import { IsString, IsBoolean, IsOptional, IsNotEmpty, MinLength, IsEmail, MaxLength, ArrayUnique  } from 'class-validator';
 import {
   isBooleanValidationOptions,
@@ -42,5 +43,5 @@ export class UserDto {
   readonly name: string;
 
   @IsNotEmpty(isNotEmptyValidationOptions())
-  readonly state: boolean;
+  readonly state: CatalogueEntity;
 }

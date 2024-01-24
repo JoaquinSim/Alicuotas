@@ -10,7 +10,6 @@ import { DatabaseModule } from './database/database.module';
 import { TimeEntity } from './modules/core/entities/time.entity';
 import { TimeDetailEntity } from './modules/core/entities/time-detail.entity';
 import { LoteEntity } from './modules/core/entities/lote.entity';
-import { TransactionalCodeEntity } from './modules/auth/entities/transicinal';
 import { MailModule } from './modules/mails/mail.module';
 import { NotificationService } from './modules/core/services/notification.service';
 
@@ -24,7 +23,7 @@ import { NotificationService } from './modules/core/services/notification.servic
       username: 'root',
       password: '',
       database: 'alicuotas',
-      entities: [UserEntity, CatalogueEntity, TimeEntity, TimeDetailEntity, LoteEntity, TransactionalCodeEntity],
+      entities: [UserEntity, CatalogueEntity, TimeEntity, TimeDetailEntity, LoteEntity],
       //dropSchema: true,
       synchronize: true,
     }),

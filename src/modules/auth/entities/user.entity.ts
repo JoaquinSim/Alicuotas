@@ -8,10 +8,12 @@ import {
   BeforeInsert,
   BeforeUpdate,
   OneToMany,
+  ManyToOne,
+  JoinColumn,
 } from 'typeorm';
 import { Exclude } from 'class-transformer';
 import * as Bcrypt from 'bcrypt';
-import { LoteEntity, TimeDetailEntity } from '@core/entities';
+import { CatalogueEntity, LoteEntity, TimeDetailEntity } from '@core/entities';
 
 @Entity('users')
 export class UserEntity {
@@ -92,13 +94,11 @@ export class UserEntity {
   })
   password: string;
 
-  @Column({
-    name: 'state',
-    type: 'boolean',
-    nullable: false,
-    comment: 'Habita la vivienda',
-  })
-  state: boolean;
+  @ManyToOne(() => CatalogueEntity, {eager:true})
+  @JoinColumn({name: 'catalogue_id'})
+  state: CatalogueEntity;
+  @Column({type: 'uuid', name: 'catalogue_id', comment: 'State'})
+  stateId: string;
 
   /** Before Actions **/
   @BeforeInsert()

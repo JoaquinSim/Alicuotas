@@ -10,8 +10,8 @@ import { LoteSeeder } from './lote.seeders';
 @Injectable()
 export class DatabaseSeeder {
     constructor(
-        private userSeeder: UserSeeder,
         private cataloguesSeeder: CataloguesSeeder,
+        private userSeeder: UserSeeder,
         private detailSeeder: DetailSeeder,
         private timeSeeder:TimeSeeder,
         private loteSeeder:LoteSeeder
@@ -19,8 +19,8 @@ export class DatabaseSeeder {
     }
 
     async run() {
-        await this.userSeeder.run()
         await this.cataloguesSeeder.run();
+        await this.userSeeder.run()
         await this.detailSeeder.run()
         await this.timeSeeder.run()
         await this.loteSeeder.run()

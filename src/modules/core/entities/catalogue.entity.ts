@@ -12,6 +12,7 @@ import {
 } from 'typeorm';
 import { TimeEntity } from './time.entity';
 import { TimeDetailEntity } from './time-detail.entity';
+import { UserEntity } from '@auth/entities';
 
 @Entity('catalogues')
 export class CatalogueEntity {
@@ -59,6 +60,9 @@ export class CatalogueEntity {
 
     @OneToMany(() => TimeDetailEntity, detail => detail.mounth)
     detail: TimeDetailEntity[];
+
+    @OneToMany(() => UserEntity, detail => detail.state)
+    user: UserEntity[];
 
     /** Columns **/
     @Column({

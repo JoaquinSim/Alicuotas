@@ -65,11 +65,9 @@ export class TimeSeeder {
     const detail3 = detail.find((detail) => {
       return detail.code === '3';
     });
-
     const detail4 = detail.find((detail) => {
       return detail.code === '4';
     });
-
     const detail5 = detail.find((detail) => {
       return detail.code === '5';
     });
@@ -80,91 +78,40 @@ export class TimeSeeder {
       return detail.code === '7';
     });
     const detail8 = detail.find((detail) => {
-        return detail.code === '8';
-      });
-      const detail9 = detail.find((detail) => {
-        return detail.code === '9';
-      });
-      const detail10 = detail.find((detail) => {
-        return detail.code === '10';
-      });
-      const detail11 = detail.find((detail) => {
-        return detail.code === '11';
-      });
-      const detail12 = detail.find((detail) => {
-        return detail.code === '12';
-      });
-      const detail13 = detail.find((detail) => {
-        return detail.code === '13';
-      });
-      const detail14 = detail.find((detail) => {
-        return detail.code === '14';
-      });
-      const detail15 = detail.find((detail) => {
-        return detail.code === '15';
-      });
+      return detail.code === '8';
+    });
+    const detail9 = detail.find((detail) => {
+      return detail.code === '9';
+    });
+    const detail10 = detail.find((detail) => {
+      return detail.code === '10';
+    });
+    const detail11 = detail.find((detail) => {
+      return detail.code === '11';
+    });
+    const detail12 = detail.find((detail) => {
+      return detail.code === '12';
+    });
+
+
 
     const catalogues: CreateTimeDto[] = [];
     catalogues.push(
       {
         year: primer,
-        detail: detail1,
+        detail: detail12,
       },
       {
         year: segundo,
-        detail: detail2,
+        detail: detail12,
       },
       {
         year: tercer,
-        detail: detail3,
+        detail: detail12,
       },
       {
         year: cuarto,
-        detail: detail4,
-      },
-      {
-        year: cuarto,
-        detail: detail4,
-      },
-      {
-        year: cuarto,
-        detail: detail4,
-      },
-      {
-        year: cuarto,
-        detail: detail4,
-      },
-      {
-        year: cuarto,
-        detail: detail4,
-      },
-      {
-        year: cuarto,
-        detail: detail4,
-      },
-      {
-        year: cuarto,
-        detail: detail4,
-      },
-      {
-        year: cuarto,
-        detail: detail4,
-      },
-      {
-        year: cuarto,
-        detail: detail4,
-      },
-      {
-        year: cuarto,
-        detail: detail4,
-      },
-      {
-        year: cuarto,
-        detail: detail4,
-      },
-      {
-        year: cuarto,
-        detail: detail4,
+        detail: detail1,
       },
     );
 

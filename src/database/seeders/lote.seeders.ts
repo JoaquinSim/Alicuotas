@@ -29,29 +29,14 @@ export class LoteSeeder {
     const time = (await this.timeService.findAll()).data;
 
     const time1 = time.find((time) => {
-      return time.detail.code === '1';
+      return time.detail.code === '12';
     });
-    const time2 = time.find((time) => {
-      return time.detail.code === '2';
-    });
-    const time3 = time.find((time) => {
-      return time.detail.code === '3';
-    });
+
     const catalogues: CreateLoteDto[] = [];
     catalogues.push(
       {
         user: user1,
         time: time1,
-        number: 1,
-      },
-      {
-        user: user1,
-        time: time2,
-        number: 1,
-      },
-      {
-        user: user1,
-        time: time3,
         number: 1,
       },
     );
