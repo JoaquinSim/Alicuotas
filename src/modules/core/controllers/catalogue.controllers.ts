@@ -42,7 +42,7 @@ export class CataloguesController {
 
     @ApiOperation({summary: 'List of catalogues'})
     @Get()
-    @UseGuards(JwtAuthGuard)
+    //@UseGuards(JwtAuthGuard)
     @HttpCode(HttpStatus.OK)
     async findAll(@Query() params: FilterCatalogueDto) {
         const response = await this.catalogueService.findAll(params);

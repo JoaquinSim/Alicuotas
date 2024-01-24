@@ -11,9 +11,8 @@ import { TimeEntity } from './modules/core/entities/time.entity';
 import { TimeDetailEntity } from './modules/core/entities/time-detail.entity';
 import { LoteEntity } from './modules/core/entities/lote.entity';
 import { TransactionalCodeEntity } from './modules/auth/entities/transicinal';
-import { MailerModule } from '@nestjs-modules/mailer';
-import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handlebars.adapter';
 import { MailModule } from './modules/mails/mail.module';
+import { NotificationService } from './modules/core/services/notification.service';
 
 
 @Module({
@@ -35,7 +34,7 @@ import { MailModule } from './modules/mails/mail.module';
     MailModule
   ],
   controllers: [AppController],
-  providers: [AppService]
+  providers: [AppService, NotificationService]
 })
 
 export class AppModule {}

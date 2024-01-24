@@ -9,6 +9,9 @@ import {
 } from 'src/shared/validation/';
 
 export class UserDto {
+  @IsOptional()
+  id: string
+
   @IsNotEmpty()
   @MaxLength(10, maxLengthValidationOptions())
   readonly cellPhone: string;

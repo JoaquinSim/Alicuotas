@@ -37,6 +37,7 @@ export class AuthController {
     @Post('login')
     @HttpCode(HttpStatus.CREATED)
     async login(@Body() payload: LoginDto): Promise<ResponseHttpModel> {
+        
         const serviceResponse = await this.authService.login(payload);
 
         return {
