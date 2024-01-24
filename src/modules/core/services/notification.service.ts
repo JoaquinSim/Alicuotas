@@ -25,10 +25,11 @@ export class NotificationService implements OnApplicationBootstrap  {
     const futureDate = new Date(); 
     futureDate.setSeconds(futureDate.getSeconds() + 5); 
 
-    const job = schedule.scheduleJob(futureDate, () => {
-      this.mailService.example()
-    });
-    
 
+    const job = schedule.scheduleJob(futureDate, () => {
+      if(futureDate.getDate() > 15 && futureDate.getDate() < 30 ){
+        this.mailService.example()
+      }
+    });
   }
 }
