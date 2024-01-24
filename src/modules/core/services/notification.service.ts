@@ -7,12 +7,13 @@ import { LoteService } from './lote.service';
 import { UsersService } from '@auth/services';
 import { LoteDto } from '../dto/lote/lote.dto';
 import { UserDto } from '@auth/dto';
+import { MailService } from '../../mails/services/mail-service.';
 
 @Injectable()
 export class NotificationService implements OnApplicationBootstrap  {
     pay: Boolean;
     userId: string;
-    constructor(private readonly loteService: LoteService, private userService: UsersService) {
+    constructor(private  loteService: LoteService, private userService: UsersService, private mailService: MailService) {
       
     }
     onApplicationBootstrap() {
@@ -40,8 +41,7 @@ export class NotificationService implements OnApplicationBootstrap  {
     futureDate.setSeconds(futureDate.getSeconds() + 5); 
 
     const job = schedule.scheduleJob(futureDate, () => {
-      console.log('Estimado ', user1.name, user1.lastname , 'Recuerde que debe cancelar su alicuota del mes de ', lote1.time.detail.mounth.name, 'de su lote con numero', lote1.number, 'el valor a pagar es ', lote1.time.detail.mount);
-
+      this.mailService.example()
       // Aqui pones la logica para el envio de correo
       
     });
