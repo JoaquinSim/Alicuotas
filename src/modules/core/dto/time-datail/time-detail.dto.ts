@@ -18,5 +18,5 @@ export class TimeDetailDto {
     readonly code: string;
 
     @IsNotEmpty(isNotEmptyValidationOptions())
-    readonly pay: boolean;
+    readonly pay: CatalogueEntity;
 }

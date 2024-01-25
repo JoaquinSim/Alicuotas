@@ -17,6 +17,9 @@ export class DetailSeeder {
     //Meses
     const mounth = (await this.cataloguesService.findAll()).data;
 
+    const pagado = mounth.find((pay) =>{
+      return pay.name === 'Pagado';
+    })
     const enero = mounth.find((mes) => {
       return mes.name === 'Enero';
     });
@@ -79,73 +82,73 @@ export class DetailSeeder {
       {
         mounth: enero,
         mount: 0,
-        pay: true,
+        pay: pagado,
         code: '1',
       },
       {
         mounth: febrero,
         mount: 0,
-        pay: true,
+        pay: pagado,
         code: '2',
       },
       {
         mounth: marzo,
         mount: 0,
-        pay: true,
+        pay: pagado,
         code: '3',
       },
       {
         mounth: abril,
         mount: 0,
-        pay: true,
+        pay: pagado,
         code: '4',
       },
       {
         mounth: mayo,
         mount: 0,
-        pay: true,
+        pay: pagado,
         code: '5',
       },
       {
         mounth: junio,
         mount: 0,
-        pay: true,
+        pay: pagado,
         code: '6',
       },
       {
         mounth: julio,
         mount: 0,
-        pay: true,
+        pay: pagado,
         code: '7',
       },
       {
         mounth: agosto,
         mount: 0,
-        pay: true,
+        pay: pagado,
         code: '8',
       },
       {
         mounth: septiembre,
         mount: 0,
-        pay: true,
+        pay: pagado,
         code: '9',
       },
       {
         mounth: octubre,
         mount: 0,
-        pay: true,
+        pay: pagado,
         code: '10',
       },
       {
         mounth: noviembre,
         mount: 0,
-        pay: true,
+        pay: pagado,
         code: '11',
       },
       {
         mounth: diciembre,
         mount: 0,
-        pay: false,
+        pay: pagado,
         code: '12',
       },
     );

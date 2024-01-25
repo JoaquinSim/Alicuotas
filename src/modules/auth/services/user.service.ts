@@ -24,16 +24,6 @@ export class UsersService {
     }
 
     async findAll(params?: FilterUserDto): Promise<ServiceResponseHttpModel> {
-        // const relations = {roles: true, careers: true};
-        // //Pagination & Filter by Search
-        // if (params?.limit > 0 && params?.page >= 0) {
-        //     return await this.paginateAndFilter(params, relations);
-        // }
-        // //Other filters
-        // if (params?.birthdate) {
-        //     return this.filterByBirthdate(params.birthdate);
-        // }
-
         //All
         const response = await this.repository.findAndCount({
            // relations,

@@ -22,6 +22,9 @@ export class TimeDetailEntity{
     @Column()
     code: string;
 
-    @Column()
-    pay: boolean;
+    @ManyToOne(() => CatalogueEntity, {eager:true})
+    @JoinColumn({name: 'catalogue_id2'})
+    pay: CatalogueEntity;
+    @Column({type: 'uuid', name: 'catalogue_id2', comment: 'Mes'})
+    payId: string;
 }

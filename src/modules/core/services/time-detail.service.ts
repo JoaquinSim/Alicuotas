@@ -72,7 +72,7 @@ export class TimeDetailService {
         const catalogue = await this.repository.findOneBy({id});
 
         if (!catalogue) {
-            throw new NotFoundException('Catalogue not found');
+            throw new NotFoundException('Detail not found');
         }
 
         this.repository.merge(catalogue, payload);

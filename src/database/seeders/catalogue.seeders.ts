@@ -157,7 +157,21 @@ export class CataloguesSeeder {
                 name: 'No habita',
                 sort: 2,
             },
-
+            {
+                code: 'pay',
+                name: 'Pagado',
+                sort: 1,
+            },
+            {
+                code: 'pay',
+                name: 'Sin pagar',
+                sort: 2,
+            },
+            {
+                code: 'pay',
+                name: 'Pendiente',
+                sort: 3,
+            },
         );
 
         for (const catalogue of catalogues) {

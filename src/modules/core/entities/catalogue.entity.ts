@@ -64,6 +64,9 @@ export class CatalogueEntity {
     @OneToMany(() => UserEntity, detail => detail.state)
     user: UserEntity[];
 
+    @OneToMany(() => TimeDetailEntity, detail => detail.pay)
+    detailPay: TimeDetailEntity[];
+
     /** Columns **/
     @Column({
         name: 'code',
