@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, OneToMany, ManyToOne, JoinColumn, OneToOne, Column } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, OneToMany, ManyToOne, JoinColumn, OneToOne, Column, CreateDateColumn, UpdateDateColumn, DeleteDateColumn } from 'typeorm';
 import { CatalogueEntity } from './catalogue.entity';
 import { TimeDetailEntity } from './time-detail.entity';
 import { UserEntity } from '@auth/entities';
@@ -9,6 +9,27 @@ export class LoteEntity{
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
+    @CreateDateColumn({
+        name: 'created_at',
+        type: 'timestamp',
+        default: () => 'CURRENT_TIMESTAMP',
+      })
+      createdAt: Date;
+    
+      @UpdateDateColumn({
+        name: 'updated_at',
+        type: 'timestamp',
+        default: () => 'CURRENT_TIMESTAMP',
+      })
+      updatedAt: Date;
+    
+      @DeleteDateColumn({
+        name: 'deleted_at',
+        type: 'timestamp',
+        nullable: false,
+      })
+      deletedAt: Date;
+      
     @Column()
     number: number;
 
